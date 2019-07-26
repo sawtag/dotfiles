@@ -1,0 +1,3 @@
+xlayoutdisplay -o eDP-1 --dpi 192 -q
+setxkbmap -layout us,ara -option caps:swapescape -option grp:alt_shift_toggle
+nm-applet &
