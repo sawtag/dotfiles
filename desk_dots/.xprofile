@@ -1,0 +1,2 @@
+nm-applet &
+setxkbmap -layout us,ara -option caps:swapescape -option grp:alt_shift_toggle
