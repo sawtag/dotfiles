@@ -4,32 +4,32 @@
 
 [[ $- != *i* ]] && return
 
-colors() {
-	local fgc bgc vals seq0
-
-	printf "Color escapes are %s\n" '\e[${value};...;${value}m'
-	printf "Values 30..37 are \e[33mforeground colors\e[m\n"
-	printf "Values 40..47 are \e[43mbackground colors\e[m\n"
-	printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
-
-	# foreground colors
-	for fgc in {30..37}; do
-		# background colors
-		for bgc in {40..47}; do
-			fgc=${fgc#37} # white
-			bgc=${bgc#40} # black
-
-			vals="${fgc:+$fgc;}${bgc}"
-			vals=${vals%%;}
-
-			seq0="${vals:+\e[${vals}m}"
-			printf "  %-9s" "${seq0:-(default)}"
-			printf " ${seq0}TEXT\e[m"
-			printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
-		done
-		echo; echo
-	done
-}
+#colors() {
+	#local fgc bgc vals seq0
+#
+	#printf "Color escapes are %s\n" '\e[${value};...;${value}m'
+	#printf "Values 30..37 are \e[33mforeground colors\e[m\n"
+	#printf "Values 40..47 are \e[43mbackground colors\e[m\n"
+	#printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"
+#
+	## foreground colors
+	#for fgc in {30..37}; do
+		## background colors
+		#for bgc in {40..47}; do
+			#fgc=${fgc#37} # white
+			#bgc=${bgc#40} # black
+#
+			#vals="${fgc:+$fgc;}${bgc}"
+			#vals=${vals%%;}
+#
+			#seq0="${vals:+\e[${vals}m}"
+			#printf "  %-9s" "${seq0:-(default)}"
+			#printf " ${seq0}TEXT\e[m"
+			#printf " \e[${vals:+${vals+$vals;}}1mBOLD\e[m"
+		#done
+		#echo; echo
+	#done
+#}
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
@@ -97,7 +97,7 @@ alias free='free -m'                      # show sizes in MB
 alias np='vim -w PKGBUILD'
 alias vi=vim
 alias more=less
-alias less='less -R'
+#alias less='less -R'
 
 xhost +local:root > /dev/null 2>&1
 
@@ -171,6 +171,7 @@ alias btrsnp='sudo btrfs subvol snapshot / /.snapshots/@/$(date +%F_%T)'
 alias btrsnp_home='sudo btrfs subvol snapshot /home /.snapshots/@home/$(date +%F_%T)'
 alias netr='killall nm-applet && sudo systemctl restart NetworkManager && sleep 1'
 alias whereami='curl -s https://ipvigilante.com/$(curl -s https://ipinfo.io/ip) | tr "," "\n"; echo -e "\n"'
+alias alttab='alttab -t 224x256 -i 64x64 -d 1'
 
 # colors for less (man pages)
 export LESS_TERMCAP_mb=$'\e[1;33m'

@@ -55,7 +55,7 @@ URxvt.iso14755:                 false
 URxvt.keysym.Shift-Control-V:   eval:paste_clipboard
 URxvt.keysym.Shift-Control-C:   eval:selection_to_clipboard
 !! xft
-Xft.dpi: 	 180
+Xft.dpi: 	 170
 Xft.antialias:   true
 Xft.hinting:     true
 Xft.rgba:        rgb
