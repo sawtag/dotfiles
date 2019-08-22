@@ -90,14 +90,6 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-#alias cp="cp -i"                          # confirm before overwriting something
-alias cp="cp --reflink=auto"
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='vim -w PKGBUILD'
-alias vi=vim
-alias more=less
-#alias less='less -R'
 
 xhost +local:root > /dev/null 2>&1
 
@@ -172,6 +164,16 @@ alias btrsnp_home='sudo btrfs subvol snapshot /home /.snapshots/@home/$(date +%F
 alias netr='killall nm-applet && sudo systemctl restart NetworkManager && sleep 1'
 alias whereami='curl -s https://ipvigilante.com/$(curl -s https://ipinfo.io/ip) | tr "," "\n"; echo -e "\n"'
 alias alttab='alttab -t 224x256 -i 64x64 -d 1'
+alias xz='xz --threads=0'
+alias bsh='vim ~/.bashrc'
+#alias cp="cp -i"                          # confirm before overwriting something
+alias cp="cp --reflink=auto"
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias np='vim -w PKGBUILD'
+alias vi=vim
+alias more=less
+#alias less='less -R'
 
 # colors for less (man pages)
 export LESS_TERMCAP_mb=$'\e[1;33m'

@@ -77,6 +77,7 @@ bindsym $mod+Shift+Print   --release exec --no-startup-id exec i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 #exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nitrogen --restore; sleep 1
+exec --no-startup-id "devmon --no-gui"
 exec_always --no-startup-id setxkbmap -layout us,ara -option caps:swapescape -option grp:alt_shift_toggle
 
 # change focus
