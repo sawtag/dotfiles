@@ -75,10 +75,6 @@ if ${use_color} ; then
 		PS1='\[\033[01;33m\][\u@\h\[\033[01;37m\] \W\[\033[01;33m\]]\$\[\033[00m\] '
 	fi
 
-	alias ls='ls --color=auto'
-	alias grep='grep --colour=auto'
-	alias egrep='egrep --colour=auto'
-	alias fgrep='fgrep --colour=auto'
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
@@ -90,14 +86,6 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-#alias cp="cp -i"                          # confirm before overwriting something
-alias cp="cp --reflink=auto"
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='vim -w PKGBUILD'
-alias vi=vim
-alias more=less
-alias less='less -R'
 
 xhost +local:root > /dev/null 2>&1
 
@@ -156,7 +144,10 @@ export HISTSIZE=5000
 #export AUTO="/run/media/op/Yeji/MEGA/learn/Tech/Automate The Boring Stuff Python/"
 #export W10="/run/media/op/BEB807E7B8079CD1/Users/d"
 #export RANGER_LOAD_DEFAULT_RC=FALSE
-alias  ll='ls -lh --color=auto'
+alias  ls='ls --color=auto'
+alias  ll='ls -AlFh --color=auto'
+alias  la='ls -A --color=auto'
+alias  l='ls -CF --color=auto'
 alias  update='trizen -Syu --noconfirm --noedit'
 alias  pyt='python3'
 alias  cfg='vim ~/.config/i3/config'
@@ -171,6 +162,20 @@ alias i3lock='i3lock -c 000000'
 alias btrsnp='sudo btrfs subvol snapshot / /.snapshots/root/$(date +%F_%T)'
 alias btrsnp_home='sudo btrfs subvol snapshot /home /.snapshots/home/$(date +%F_%T)'
 alias whereami='curl -s https://ipvigilante.com/$(curl -s https://ipinfo.io/ip) | tr "," "\n"; echo -e "\n"'
+alias mm='cd learn/Self-Improvement/The\ Memory\ Book\ -\ The\ Classic\ Guide\ to\ Improving\ Your\ Memory\ at\ Work\,\ at\ School\,\ and\ at\ Play\ -Mantesh/'
+alias zth='zathura --fork *.pdf'
+alias xz='xz --threads=0'
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
+alias cp="cp --reflink=auto"
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
+alias np='vim -w PKGBUILD'
+alias vi=vim
+alias more=less
+alias less='less -R'
+
 
 # colors for less (man pages)
 export LESS_TERMCAP_mb=$'\e[1;33m'
@@ -189,3 +194,5 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<~/.ssh-agent-thing)" &> /dev/null
 fi
 
+[ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || 
+    eval $(dircolors -b)
