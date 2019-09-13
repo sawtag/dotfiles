@@ -144,7 +144,7 @@ stty -ixon
 # which means don't save duplicates, or lines that start with space
 # erasedups remove all old dups when a command is repeated
 export HISTCONTROL=ignoreboth:erasedups
-export HISTSIZE=5000
+export HISTSIZE=8001  #feces tie
 #export MEGA="/run/media/op/Yeji/MEGA"
 #export VIML="/run/media/op/Yeji/MEGA/learn/Tech/vim"
 # Use local ranger settings rather than global

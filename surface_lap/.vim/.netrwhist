@@ -1,3 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/home/pwi/.config/i3'
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/mnt/ms/Users/sosi/Music/The Holy Mountain'
+let g:netrw_dirhist_7='/mnt/ms/Users/sosi/Music'
+let g:netrw_dirhist_6='/mnt/ms/Users/sosi'
+let g:netrw_dirhist_5='/mnt/ms/Users'
+let g:netrw_dirhist_4='/mnt/ms'
+let g:netrw_dirhist_3='/mnt'
+let g:netrw_dirhist_2='/home/pwi'
+let g:netrw_dirhist_1='/boot/loader/entries'
