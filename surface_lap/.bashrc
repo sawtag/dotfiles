@@ -210,3 +210,7 @@ alias ampv='mpv --force-window --no-video'
 alias more=less
 alias update='trizen -Syu --noconfirm --noedit'
 alias pyt='python3'
+#Aliases
+if [ -f ~/.aliases ]; then
+  . ~/.aliases 2> /dev/null
+fi
