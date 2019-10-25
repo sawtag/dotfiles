@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/pwi/.config/qt5ct'
 let g:netrw_dirhist_8='/mnt/ms/Users/sosi/Music/The Holy Mountain'
 let g:netrw_dirhist_7='/mnt/ms/Users/sosi/Music'
 let g:netrw_dirhist_6='/mnt/ms/Users/sosi'
