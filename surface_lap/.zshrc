@@ -160,6 +160,10 @@ if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
+if [ -f ~/.profile ]; then
+  . ~/.profile
+fi
+
 # Start one instant of ssh-agent
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
     ssh-agent > ~/.ssh-agent-thing
