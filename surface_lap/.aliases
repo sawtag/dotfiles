@@ -1,0 +1,40 @@
+# Web search for zsh
+alias go='web_search google'
+alias yt='web_search duckduckgo \!yt'
+# grep modes
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
+# ls modes
+alias ls='ls --color=auto'
+alias ll='ls -alFh --color=auto'
+alias la='ls -A --color=auto'
+alias l='ls -CF --color=auto'
+# Config files editing
+alias cfg='vim ~/.config/i3/config'
+alias swy='vim ~/.config/sway/config'
+alias bsh='vim ~/.bashrc'
+alias zrc='vim ~/.zshrc'
+# Copy/paste in terminal
+alias c='xclip'
+alias v='xclip -o'
+alias cs='xclip -selection clipboard'
+alias vs='xclip -o -selection clipboard'
+# Btrfs-specific
+alias hbr='sudo echo disk | sudo tee /sys/power/state'
+alias btrsnp='sudo btrfs subvol snapshot / /.snapshots/@/$(date +%F_%T)'
+alias btrsnp_home='sudo btrfs subvol snapshot /home /.snapshots/@home/$(date +%F_%T)'
+# Misc
+alias whereami='curl -s https://ipvigilante.com/$(curl -s https://ipinfo.io/ip) | tr "," "\n"; echo -e "\n"'
+alias alttab='alttab -t 224x256 -i 64x64 -d 1'
+alias xz='xz --threads=0'
+alias cp="cp --reflink=auto"
+alias df='df -h'
+alias free='free -m'
+alias np='vim -w PKGBUILD'
+alias vi=vim
+alias ampv='mpv --force-window --no-video'
+alias more=less
+alias update='trizen -Syu --noconfirm --noedit'
+alias pyt='python3'
+alias -s pdf='zathura --fork'

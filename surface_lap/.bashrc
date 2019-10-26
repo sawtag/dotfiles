@@ -75,10 +75,6 @@ if ${use_color} ; then
 		PS1='\[\033[01;33m\][\u@\h\[\033[01;37m\] \W\[\033[01;33m\]]\$\[\033[00m\] '
 	fi
 
-	alias ls='ls --color=auto'
-	alias grep='grep --colour=auto'
-	alias egrep='egrep --colour=auto'
-	alias fgrep='fgrep --colour=auto'
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
@@ -104,6 +100,7 @@ shopt -s checkwinsize
 shopt -s expand_aliases
 
 # export QT_SELECT=4
+# export QT_QPA_PLATFORM=wayland
 
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
@@ -144,41 +141,12 @@ stty -ixon
 # which means don't save duplicates, or lines that start with space
 # erasedups remove all old dups when a command is repeated
 export HISTCONTROL=ignoreboth:erasedups
-export HISTSIZE=5000
+export HISTSIZE=8001  #feces tie
 #export MEGA="/run/media/op/Yeji/MEGA"
 #export VIML="/run/media/op/Yeji/MEGA/learn/Tech/vim"
 # Use local ranger settings rather than global
 export RANGER_LOAD_DEFAULT_RC=FALSE
 #export AUTO="/run/media/op/Yeji/MEGA/learn/Tech/Automate The Boring Stuff Python/"
-alias  ll='ls -alFh --color=auto'
-alias  la='ls -A --color=auto'
-alias  l='ls -CF --color=auto'
-alias  update='trizen -Syu --noconfirm --noedit'
-alias  pyt='python3'
-alias  cfg='vim ~/.config/i3/config'
-alias  ampv='mpv --force-window --no-video'
-alias  c='xclip'
-alias  v='xclip -o'
-alias  cs='xclip -selection clipboard'
-alias  vs='xclip -o -selection clipboard'
-#alias  btrsnp="btrfs subvol snapshot /run/media/op/arc/_data/ /run/media/op/arc/snapshots/$(date +%F_%T)"
-alias hbr='sudo echo disk | sudo tee /sys/power/state'
-alias i3lock='i3lock -c 000000'
-alias btrsnp='sudo btrfs subvol snapshot / /.snapshots/@/$(date +%F_%T)'
-alias btrsnp_home='sudo btrfs subvol snapshot /home /.snapshots/@home/$(date +%F_%T)'
-alias netr='killall nm-applet && sudo systemctl restart NetworkManager && sleep 1'
-alias whereami='curl -s https://ipvigilante.com/$(curl -s https://ipinfo.io/ip) | tr "," "\n"; echo -e "\n"'
-alias alttab='alttab -t 224x256 -i 64x64 -d 1'
-alias xz='xz --threads=0'
-alias bsh='vim ~/.bashrc'
-#alias cp="cp -i"                          # confirm before overwriting something
-alias cp="cp --reflink=auto"
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='vim -w PKGBUILD'
-alias vi=vim
-alias more=less
-#alias less='less -R'
 
 # colors for less (man pages)
 export LESS_TERMCAP_mb=$'\e[1;33m'
@@ -197,3 +165,52 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<~/.ssh-agent-thing)" &>/dev/null
 fi
 
+#powerline-daemon -q
+#POWERLINE_BASH_CONTINUATION=1
+#POWERLINE_BASH_SELECT=1
+#. /usr/share/powerline/bindings/bash/powerline.sh
+
+# Aliases
+# Web search for zsh
+alias go='web_search google'
+alias yt='web_search duckduckgo \!yt'
+# grep modes
+alias grep='grep --colour=auto'
+alias egrep='egrep --colour=auto'
+alias fgrep='fgrep --colour=auto'
+# ls modes
+alias ls='ls --color=auto'
+alias ll='ls -alFh --color=auto'
+alias la='ls -A --color=auto'
+alias l='ls -CF --color=auto'
+# Config files editing
+alias cfg='vim ~/.config/i3/config'
+alias swy='vim ~/.config/sway/config'
+alias bsh='vim ~/.bashrc'
+alias zrc='vim ~/.zshrc'
+# Copy/paste in terminal
+alias c='xclip'
+alias v='xclip -o'
+alias cs='xclip -selection clipboard'
+alias vs='xclip -o -selection clipboard'
+# Btrfs-specific
+alias hbr='sudo echo disk | sudo tee /sys/power/state'
+alias btrsnp='sudo btrfs subvol snapshot / /.snapshots/@/$(date +%F_%T)'
+alias btrsnp_home='sudo btrfs subvol snapshot /home /.snapshots/@home/$(date +%F_%T)'
+# Misc
+alias whereami='curl -s https://ipvigilante.com/$(curl -s https://ipinfo.io/ip) | tr "," "\n"; echo -e "\n"'
+alias alttab='alttab -t 224x256 -i 64x64 -d 1'
+alias xz='xz --threads=0'
+alias cp="cp --reflink=auto"
+alias df='df -h'
+alias free='free -m'
+alias np='vim -w PKGBUILD'
+alias vi=vim
+alias ampv='mpv --force-window --no-video'
+alias more=less
+alias update='trizen -Syu --noconfirm --noedit'
+alias pyt='python3'
+#Aliases
+if [ -f ~/.aliases ]; then
+  . ~/.aliases 2> /dev/null
+fi

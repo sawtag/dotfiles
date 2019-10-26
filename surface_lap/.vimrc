@@ -6,6 +6,7 @@ set encoding=utf-8
 
 "runtime macros/matchit.vim
 packadd! matchit  "Enable matchit plugin for enhanced '%' functionality
+let g:powerline_pycmd="py3"
 set ruler
 set number relativenumber
 set hidden
