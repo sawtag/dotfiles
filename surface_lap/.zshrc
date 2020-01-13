@@ -21,8 +21,9 @@ unsetopt beep
 #setopt correct                 # Command's spelling correction
 
 # vi mode (Use 'Esc" to enter vi mode)
-bindkey -v
-export KEYTIMEOUT=1
+#bindkey -v
+#export KEYTIMEOUT=1
+
 
 # Use vim keys in tab complete menu (didn't work TODO: troubleshoot)
 #bindkey -M menuselect 'h' vi-backward-char
@@ -173,9 +174,12 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
-#source /usr/share/doc/pkgfile/command-not-found.zsh
-bindkey '^ ' autosuggest-accept
 #TODO: Setup & learn autojump
 source /etc/profile.d/autojump.zsh
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+# Enable emac shortcuts
+bindkey -e
+
+#source /usr/share/doc/pkgfile/command-not-found.zsh
+bindkey '^ ' autosuggest-accept
 #zprof
