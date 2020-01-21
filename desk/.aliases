@@ -21,7 +21,7 @@ alias v='xclip -o'
 alias cs='xclip -selection clipboard'
 alias vs='xclip -o -selection clipboard'
 # Btrfs-specific
-#alias hbr='sudo echo disk | sudo tee /sys/power/state'
+alias hbr='sudo echo disk | sudo tee /sys/power/state'
 alias btrsnp='sudo btrfs subvol snapshot / /.snapshots/@/$(date +%F_%T)'
 alias btrsnp_home='sudo btrfs subvol snapshot /home /.snapshots/@home/$(date +%F_%T)'
 alias btrsnp_arc='btrfs subvol snapshot /mnt/arc /mnt/arc/.snapshots/@/$(date +%F_%T)'
