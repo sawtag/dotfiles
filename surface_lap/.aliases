@@ -25,7 +25,8 @@ alias hbr='sudo echo disk | sudo tee /sys/power/state'
 alias btrsnp='sudo btrfs subvol snapshot / /.snapshots/@/$(date +%F_%T)'
 alias btrsnp_home='sudo btrfs subvol snapshot /home /.snapshots/@home/$(date +%F_%T)'
 # Misc
-alias whereami='curl -s https://ipvigilante.com/$(curl -s https://ipinfo.io/ip) | tr "," "\n"; echo -e "\n"'
+#alias whereami='curl -s https://ipvigilante.com/$(curl -s https://ipinfo.io/ip) | tr "," "\n"; echo -e "\n"'
+alias whereami='curl -s https://ipvigilante.com/ | tr "," "\n"; echo -e "\n"'
 alias alttab='alttab -t 224x256 -i 64x64 -d 1'
 alias xz='xz --threads=0'
 alias cp="cp --reflink=auto"

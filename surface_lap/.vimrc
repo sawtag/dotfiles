@@ -6,7 +6,6 @@ set encoding=utf-8
 
 "runtime macros/matchit.vim
 packadd! matchit  "Enable matchit plugin for enhanced '%' functionality
-let g:powerline_pycmd="py3"
 set ruler
 set number relativenumber
 set hidden
@@ -52,6 +51,7 @@ set backspace=indent,eol,start
 "Folding options. Good for python
 "set foldmethod=indent
 "set foldlevel=99
+highlight Folded ctermbg=Black ctermfg=Yellow
 nnoremap <space> za
 
 "Easy buffer movements
@@ -113,8 +113,12 @@ let python_highlight_all = 1
 "Specific file settings
 if has("autocmd")
   filetype on
-  autocmd filetype python setlocal ts=4 sts=4 sw=4 et cc=80 tw=79
-  autocmd filetype python nnoremap <F7> :update <bar> :!python3 %<CR>
+  autocmd filetype python setlocal ts=4 sts=4 sw=4 et cc=80 tw=79 et ai ff=unix
+  "autocmd filetype python nnoremap <F8> :update <bar> :!python3 %<CR>
+  autocmd filetype python noremap <buffer> <F8> :call Autopep8()<CR>
+  autocmd filetype python nnoremap <silent> K :call completor#do('doc')<CR>
+  autocmd filetype python nnoremap <silent> [D :call completor#do('definition')<CR>
+  autocmd filetype python nnoremap <silent> ]D :call completor#do('definition')<CR>
   autocmd filetype python nnoremap <F6> :update <bar>
         \:let temp = &splitright<bar>
         \:setlocal splitright<bar>
@@ -123,6 +127,7 @@ if has("autocmd")
         \:let &splitright = temp<CR>
 endif
 "TODO: Have a makeprg section and instead call :make % with <F6> for all files
+
 "Save root files
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
@@ -136,7 +141,8 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-abolish'
 Plug 'mileszs/ack.vim'
 Plug 'maralla/completor.vim'
-
+"Plug 'nvie/vim-flake8'
+Plug 'tell-k/vim-autopep8'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 """""""""""""""""""""""""""""""
