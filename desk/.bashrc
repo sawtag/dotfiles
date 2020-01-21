@@ -144,38 +144,12 @@ export HISTSIZE=5000
 #export AUTO="/run/media/op/Yeji/MEGA/learn/Tech/Automate The Boring Stuff Python/"
 #export W10="/run/media/op/BEB807E7B8079CD1/Users/d"
 #export RANGER_LOAD_DEFAULT_RC=FALSE
-alias  ls='ls --color=auto'
-alias  ll='ls -AlFh --color=auto'
-alias  la='ls -A --color=auto'
-alias  l='ls -CF --color=auto'
-alias  update='trizen -Syu --noconfirm --noedit'
-alias  pyt='python3'
-alias  cfg='vim ~/.config/i3/config'
-alias  ampv='mpv --force-window --no-video'
-alias  c='xclip'
-alias  v='xclip -o'
-alias  cs='xclip -selection clipboard'
-alias  vs='xclip -o -selection clipboard'
-#alias  btrsnp="btrfs subvol snapshot /run/media/op/arc/_data/ /run/media/op/arc/snapshots/$(date +%F_%T)"
-alias hbr='sudo echo disk | sudo tee /sys/power/state'
-alias i3lock='i3lock -c 000000'
-alias btrsnp='sudo btrfs subvol snapshot / /.snapshots/root/$(date +%F_%T)'
-alias btrsnp_home='sudo btrfs subvol snapshot /home /.snapshots/home/$(date +%F_%T)'
-alias whereami='curl -s https://ipvigilante.com/$(curl -s https://ipinfo.io/ip) | tr "," "\n"; echo -e "\n"'
-alias mm='cd learn/Self-Improvement/The\ Memory\ Book\ -\ The\ Classic\ Guide\ to\ Improving\ Your\ Memory\ at\ Work\,\ at\ School\,\ and\ at\ Play\ -Mantesh/'
-alias zth='zathura --fork *.pdf'
-alias xz='xz --threads=0'
-alias grep='grep --colour=auto'
-alias egrep='egrep --colour=auto'
-alias fgrep='fgrep --colour=auto'
-alias cp="cp --reflink=auto"
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='vim -w PKGBUILD'
-alias vi=vim
-alias more=less
-alias less='less -R'
 
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
+fi
+
+#alias  btrsnp="btrfs subvol snapshot /run/media/op/arc/_data/ /run/media/op/arc/snapshots/$(date +%F_%T)"
 
 # colors for less (man pages)
 export LESS_TERMCAP_mb=$'\e[1;33m'
@@ -194,5 +168,6 @@ if [[ ! "$SSH_AUTH_SOCK" ]]; then
     eval "$(<~/.ssh-agent-thing)" &> /dev/null
 fi
 
+# Dircolors
 [ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || 
     eval $(dircolors -b)
