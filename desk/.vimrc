@@ -54,6 +54,10 @@ set backspace=indent,eol,start
 highlight Folded ctermbg=Black ctermfg=Yellow
 nnoremap <space> za
 
+"Insert current date and time:
+nnoremap <F2> "=strftime("%Y-%b-%d @ %T")<CR>P
+inoremap <F2> <C-R>=strftime("%Y-%b-%d @ %T")<CR> 
+
 "Easy buffer movements
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
@@ -106,6 +110,10 @@ xnoremap & :&&<CR>
 
 "ctags shortcut for code index
 nnoremap <F5> :silent !ctags -R<CR>:redraw!<CR>
+
+"Insert date and time:
+nnoremap <C-h> "=strftime('%Y %b %d @ %T')<CR>p
+inoremap <C-h> <C-r>=strftime('%Y %b %d @ %T')<CR>
 
 "Enable all Pyth syntax highlghts features
 let python_highlight_all = 1
