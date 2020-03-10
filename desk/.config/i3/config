@@ -69,7 +69,8 @@ bindsym XF86AudioLowerVolume      exec --no-startup-id "pactl set-sink-volume @D
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+Return exec i3-sensible-terminal -name flt
 bindsym $mod+F1 exec i3-sensible-terminal -e 'python'
-bindsym XF86Calculator exec i3-sensible-terminal -e 'python'
+bindsym $mod+Shift+F1 exec i3-sensible-terminal -name flt_pyt -e 'python'
+bindsym XF86Calculator exec i3-sensible-terminal -name flt_pyt -e 'python'
 bindsym $mod+F2 exec $BROWSER
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+F4 exec i3-sensible-terminal -e 'ranger'
@@ -93,10 +94,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left 75 px
+bindsym $mod+Shift+j move down 75 px
+bindsym $mod+Shift+k move up 75 px
+bindsym $mod+Shift+l move right 75 px
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -193,10 +194,12 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
 # floating windows exceptions
 for_window [class="URxvt" instance="flt"] floating enable border pixel 1
+for_window [class="python" instance="flt_pyt"] floating enable border pixel 1
 for_window [class="Viewnior"] floating enable border pixel 1
 for_window [class="Pavucontrol"] floating enable border pixel 1
 for_window [class="mpv"] floating enable border pixel 1
 for_window [class="Nitrogen"] floating enable border pixel 1
+for_window [class="KeePassXC"] floating enable border pixel 1
 
 # switch to urgent window
 for_window [urgent=latest] focus
