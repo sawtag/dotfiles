@@ -74,6 +74,7 @@ bindsym XF86Calculator exec i3-sensible-terminal -name flt_pyt -e 'python'
 bindsym $mod+F2 exec $BROWSER
 bindsym $mod+F3 exec pcmanfm
 bindsym $mod+F4 exec i3-sensible-terminal -e 'ranger'
+bindsym $mod+Shift+F4 exec i3-sensible-terminal  -name flt_rngr -e 'ranger'
 bindsym Print   exec --no-startup-id i3-scrot
 bindsym $mod+Print   --release exec --no-startup-id exec i3-scrot -w
 bindsym $mod+Shift+Print   --release exec --no-startup-id exec i3-scrot -s
@@ -194,6 +195,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
 # floating windows exceptions
 for_window [class="URxvt" instance="flt"] floating enable border pixel 1
+for_window [class="ranger" instance="flt_rngr"] floating enable border pixel 1
 for_window [class="python" instance="flt_pyt"] floating enable border pixel 1
 for_window [class="Viewnior"] floating enable border pixel 1
 for_window [class="Pavucontrol"] floating enable border pixel 1
