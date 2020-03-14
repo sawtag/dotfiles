@@ -1,2 +1,5 @@
 set selection-clipboard clipboard
-statusbar-basename
+set statusbar-basename
+set window-title-home-tilde
+set statusbar-home-tilde
+# set sandbox strict
