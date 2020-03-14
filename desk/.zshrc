@@ -78,7 +78,7 @@ ZSH=/usr/share/oh-my-zsh/
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
 DISABLE_UPDATE_PROMPT="true"
@@ -122,7 +122,7 @@ DISABLE_UPDATE_PROMPT="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(history git vi-mode extract colored-man-pages colorize copydir systemd web-search zsh-syntax-highlighting zsh-autosuggestions command-not-found)
+plugins=(history git vi-mode extract colored-man-pages colorize copydir systemd zsh-syntax-highlighting zsh-autosuggestions command-not-found fzf)
 
 
 # User configuration
@@ -177,6 +177,9 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 bindkey -e
 bindkey '^ ' autosuggest-accept
+# fzf keybindings and completion:
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 #TODO: Setup & learn autojump
 #source /etc/profile.d/autojump.zsh
 #zprof
