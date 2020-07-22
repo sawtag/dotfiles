@@ -41,3 +41,5 @@ alias more=less
 alias update='trizen -Syu --noconfirm --noedit'
 alias pyt='python3'
 alias -s pdf='zathura --fork'
+alias jr='vi $HOME/Dropbox/journal/journal.txt'
+alias crn='curl https://corona-stats.online/'

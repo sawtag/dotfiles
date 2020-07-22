@@ -38,6 +38,7 @@
 !! URxvt
 URxvt.scrollBar: false
 URxvt.font:      xft:NotoSansMono:size=10
+! URxvt.letterSpace:-1
 !  URxvt extentions
 URxvt.perl-ext-common:          default,resize-font,url-select
 ! Clicking on URL using mouse with matcher
@@ -66,4 +67,5 @@ Xft.lcdfilter:   lcddefault
 XTerm*faceName:  Fixed
 XTerm*faceSize:  10
 XTerm*selectToClipboard: true
+
 
