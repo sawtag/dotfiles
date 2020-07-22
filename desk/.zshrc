@@ -12,11 +12,20 @@ done
 compinit -C
 
 autoload -Uz zmv
+
+### HISTFILE settings
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-setopt hist_ignore_all_dups
-setopt appendhistory
+# History format: :start_time:elapsed_time;command
+setopt EXTENDED_HISTORY
+# When duplicated, delete the old entry and write a new one (so the duplicate is the most recent entry)
+setopt HIST_IGNORE_ALL_DUPS
+# Write to history file immediately, not when exiting shell session
+setopt INC_APPEND_HISTORY
+# Don't execute immediately after history expansion
+setopt HIST_VERIFY
+
 unsetopt beep
 #setopt correct                 # Command's spelling correction
 
