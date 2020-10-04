@@ -11,6 +11,7 @@ general {
         interval = 5
 }
 
+order += "read_file CORONA"
 order += "ipv6"
 order += "wireless _first_"
 order += "ethernet _first_"
@@ -21,6 +22,13 @@ order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "memory"
 order += "tztime local"
+
+read_file CORONA {
+        format = "%title: %content"
+        path = "/home/op/.cache/corona_format"
+
+}
+
 
 wireless _first_ {
         format_up = "W: (%quality at %essid) %ip"
