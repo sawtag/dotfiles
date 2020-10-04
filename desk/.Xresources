@@ -37,8 +37,8 @@
 
 !! URxvt
 URxvt.scrollBar: false
-URxvt.font:      xft:NotoSansMono:size=10
-! URxvt.letterSpace:-1
+URxvt.font:      xft:Source Code Pro:semibold:size=10
+URxvt.letterSpace: 0
 !  URxvt extentions
 URxvt.perl-ext-common:          default,resize-font,url-select
 ! Clicking on URL using mouse with matcher
@@ -56,7 +56,8 @@ URxvt.iso14755:                 false
 URxvt.keysym.Shift-Control-V:   eval:paste_clipboard
 URxvt.keysym.Shift-Control-C:   eval:selection_to_clipboard
 !! xft
-Xft.dpi:        80
+Xft.dpi:        82
+! Xft.dpi:        96
 Xft.antialias:   true
 Xft.hinting:     true
 Xft.rgba:        rgb
@@ -67,5 +68,3 @@ Xft.lcdfilter:   lcddefault
 XTerm*faceName:  Fixed
 XTerm*faceSize:  10
 XTerm*selectToClipboard: true
-
-

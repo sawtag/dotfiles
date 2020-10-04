@@ -1,4 +1,6 @@
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
+#export COLORTERM=truecolor
 export BROWSER=/usr/bin/firefox
 export PAGER=/usr/bin/less
 export FILEMANAGER=/usr/bin/ranger

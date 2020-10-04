@@ -13,19 +13,6 @@ compinit -C
 
 autoload -Uz zmv
 
-### HISTFILE settings
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-# History format: :start_time:elapsed_time;command
-setopt EXTENDED_HISTORY
-# When duplicated, delete the old entry and write a new one (so the duplicate is the most recent entry)
-setopt HIST_IGNORE_ALL_DUPS
-# Write to history file immediately, not when exiting shell session
-setopt INC_APPEND_HISTORY
-# Don't execute immediately after history expansion
-setopt HIST_VERIFY
-
 unsetopt beep
 #setopt correct                 # Command's spelling correction
 
@@ -189,6 +176,20 @@ bindkey '^ ' autosuggest-accept
 # fzf keybindings and completion:
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+### HISTFILE settings
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+# History format: :start_time:elapsed_time;command
+setopt EXTENDED_HISTORY
+# When duplicated, delete the old entry and write a new one (so the duplicate is the most recent entry)
+setopt HIST_IGNORE_ALL_DUPS
+# Write to history file immediately, not when exiting shell session
+setopt INC_APPEND_HISTORY
+# Don't execute immediately after history expansion
+setopt HIST_VERIFY
+
 #TODO: Setup & learn autojump
-#source /etc/profile.d/autojump.zsh
+  #source /etc/profile.d/autojump.zsh
 #zprof
