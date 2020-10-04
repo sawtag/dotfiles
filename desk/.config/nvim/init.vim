@@ -14,7 +14,7 @@ set timeoutlen=1000         "Timeout (ms) for mappings
 set ttimeoutlen=10          "Timeout (ms) for key codes
 set shortmess+=A            "Don't warn about swp files
 set noswapfile              "Don't create swap files
-set laststatus=2
+"set laststatus=2
 "set statusline^=%{coc#status()}
 au BufEnter * set noro      "Don't warn about read-only files
 
@@ -55,6 +55,7 @@ set backspace=indent,eol,start
 "set foldlevel=99
 highlight Folded ctermbg=Black ctermfg=Yellow
 nnoremap <space> za
+
 "Force kill current buffer
 nnoremap <C-Q> :bdel!<CR>
 
@@ -134,7 +135,7 @@ if has("autocmd")
   autocmd filetype python nnoremap <F6> :update <bar>
         \:let temp = &splitright<bar>
         \:setlocal splitright<bar>
-        \:vertical term python3 %<CR>
+        \:vertical vsplit <bar> terminal python3 %<CR>
         "\:<C-w>h
         \:let &splitright = temp<CR>
   autocmd filetype tex nnoremap <F6> :update <bar> :VimtexCompile<CR>
@@ -142,7 +143,7 @@ endif
 "TODO: Have a makeprg section and instead call :make % with <F6> for all files
 
 "Save root files
-cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+"cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 """""""""""""""""""""""""""""""
 "Plugins will be downloaded under the specified directory.
@@ -157,6 +158,7 @@ Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvie/vim-flake8'
 Plug 'lervag/vimtex'
+Plug 'lambdalisue/suda.vim'
 "Plug 'tell-k/vim-autopep8'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -165,11 +167,15 @@ call plug#end()
 "let g:completor_python_binary = "/usr/bin/python"
 
 "Plugin: vimtex.vim options:
+let g:vimtex_compiler_progname = 'nvr'
 let g:tex_flavor = 'latex'
 let g:vimtex_view_method='zathura'
 "let g:vimtex_quickfix_mode=0
 
+"Plugin: suda.vim options:
+let g:suda#prefix = ['suda://', 'sudo://', '_://']
+
 "Start vim with a server. Allows backword search from PDF file to vim. Useful for Latex:
-if empty(v:servername) && exists('*remote_startserver')
-  call remote_startserver('VIM')
-endif
+"if empty(v:servername) && exists('*remote_startserver')
+"  call remote_startserver('VIM')
+"endif
