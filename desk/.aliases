@@ -1,6 +1,9 @@
 # Web search for zsh
 alias go='web_search google'
 alias yt='web_search duckduckgo \!yt'
+# NVim migration
+alias vim='/usr/bin/nvim'
+alias vi='/usr/bin/nvim'
 # grep modes
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
@@ -23,10 +26,11 @@ alias vs='xclip -o -selection clipboard'
 # Btrfs-specific
 alias hbr='sudo systemctl hibernate'
 #alias hbr='sudo echo disk | sudo tee /sys/power/state'
-alias btrsnp='sudo btrfs subvol snapshot / /.snapshots/@/$(date +%F_%T)'
-alias btrsnp_home='sudo btrfs subvol snapshot /home /.snapshots/@home/$(date +%F_%T)'
-alias btrsnp_arc='btrfs subvol snapshot /mnt/arc /mnt/arc/.snapshots/@/$(date +%F_%T)'
-alias btrsnp_media='btrfs subvol snapshot /mnt/arc/media /mnt/arc/.snapshots/@media/$(date +%F_%T)'
+alias btrsnp='sudo mkdir /.snapshots/@/$(date +%F_%T) && sudo btrfs subvol snapshot -r / /.snapshots/@/$(ls -t /.snapshots/@/ | head -n1)/@'
+alias btrsnp_home='sudo mkdir /.snapshots/@home/$(date +%F_%T) && sudo btrfs subvol snapshot -r / /.snapshots/@home/$(ls -t /.snapshots/@home/ | head -n1)/@home'
+#alias btrsnp_home='sudo btrfs subvol snapshot -r /home /.snapshots/@home/$(date +%F_%T)'
+alias btrsnp_arc='btrfs subvol snapshot -r /mnt/arc /mnt/arc/.snapshots/@/$(date +%F_%T)'
+alias btrsnp_media='btrfs subvol snapshot -r /mnt/arc/media /mnt/arc/.snapshots/@media/$(date +%F_%T)'
 # Misc
 alias whereami='curl -s https://ipvigilante.com/$(curl -s https://ipinfo.io/ip) | tr "," "\n"; echo -e "\n"'
 alias alttab='alttab -t 224x256 -i 64x64 -d 1'
