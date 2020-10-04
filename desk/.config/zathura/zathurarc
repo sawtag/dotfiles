@@ -3,3 +3,6 @@ set statusbar-basename
 set window-title-home-tilde
 set statusbar-home-tilde
 # set sandbox strict
+# Adding reverse search between neovim and zathura
+set synctex true
+set synctex-editor-command "nvr --remote-silent +%l %f"
