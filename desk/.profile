@@ -1,5 +1,5 @@
-export EDITOR=/usr/bin/nvim
-export VISUAL=/usr/bin/nvim
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
 #export COLORTERM=truecolor
 export BROWSER=/usr/bin/firefox
 export PAGER=/usr/bin/less
@@ -9,3 +9,4 @@ export TERMINAL=/usr/bin/urxvt
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export FZF_BASE=/usr/share/fzf
+export PATH="$HOME/.local/bin:$PATH"

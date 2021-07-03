@@ -14,7 +14,7 @@ set timeoutlen=1000         "Timeout (ms) for mappings
 set ttimeoutlen=10          "Timeout (ms) for key codes
 set shortmess+=A            "Don't warn about swp files
 set noswapfile              "Don't create swap files
-"set laststatus=2
+set laststatus=1
 "set statusline^=%{coc#status()}
 au BufEnter * set noro      "Don't warn about read-only files
 
@@ -40,6 +40,7 @@ set wildmode=longest,list,full
 set hlsearch
 set incsearch
 "set ignorecase
+"set smartcase
 
 ""Formatting
 set autoindent
