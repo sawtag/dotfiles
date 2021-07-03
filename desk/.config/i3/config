@@ -43,7 +43,7 @@ floating_modifier $mod
 
 
 # kill focused window
-bindsym $mod+x kill
+bindsym $mod+Shift+backslash kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
@@ -143,7 +143,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 #navigate workspaces next/prev
-bindsym $mod+c workspace next
+bindsym $mod+x workspace next
 bindsym $mod+z workspace prev
 
 # focus the child container
