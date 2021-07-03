@@ -1,17 +1,16 @@
 #zmodload zsh/zprof
 
 autoload -U colors && colors
-autoload -Uz compinit
+autoload -Uz zmv
 #zstyle :compinstall filename '/home/pwi/.zshrc'
 #zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+
 # Speed up completions by caching only once a day
-for dump in ~/.zcompdump(N.mh+24); do
-  compinit
-done
+#for dump in ~/.zcompdump(N.mh+24); do
+  #compinit
+#done
 
-compinit -C
-
-autoload -Uz zmv
+autoload -U compinit && compinit
 
 unsetopt beep
 #setopt correct                 # Command's spelling correction
