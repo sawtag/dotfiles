@@ -37,7 +37,8 @@
 
 !! URxvt
 URxvt.scrollBar: false
-URxvt.font:      xft:Source Code Pro:semibold:size=10
+!URxvt.font:      xft:Source Code Pro:semibold:size=10
+URxvt.font:      xft:NotoSansMono:size=10
 URxvt.letterSpace: 0
 !  URxvt extentions
 URxvt.perl-ext-common:          default,resize-font,url-select
